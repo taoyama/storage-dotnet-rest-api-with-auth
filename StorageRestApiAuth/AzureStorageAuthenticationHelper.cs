@@ -57,7 +57,7 @@ namespace StorageRestApiAuth
             // This is the actual header that will be added to the list of request headers.
             // You can stop the code here and look at the value of 'authHV' before it is returned.
             AuthenticationHeaderValue authHV = new AuthenticationHeaderValue("SharedKey",
-                storageAccountName + ":" + Convert.ToBase64String(SHA256.ComputeHash(SignatureBytes)));
+                storageAccountName + ":" + signature));
             return authHV;
         }
 
